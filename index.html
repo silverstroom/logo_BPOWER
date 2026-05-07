@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>BPOWER - Regole Utilizzo Logo</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background: #f7f7f9;
+    color: #1a1a2e;
+    line-height: 1.5;
+    padding: 40px 20px;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  /* Header */
+  .header {
+    border-bottom: 3px solid #E61F4D;
+    padding-bottom: 18px;
+    margin-bottom: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .header h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1a1a2e;
+    letter-spacing: -0.5px;
+  }
+  .header h1 span { color: #E61F4D; }
+  .header .subtitle {
+    color: #6b6b80;
+    font-size: 14px;
+    text-align: right;
+  }
+  .header .subtitle b { color: #1a1a2e; }
+
+  /* Section title */
+  .section-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #063064;
+    margin: 50px 0 24px 0;
+    text-align: center;
+    letter-spacing: -0.3px;
+  }
+  .section-subtitle {
+    text-align: center;
+    color: #6b6b80;
+    font-size: 15px;
+    margin-bottom: 32px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Cards grid */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(6, 48, 100, 0.08);
+    display: flex;
+    flex-direction: column;
+  }
+  .card-preview {
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+  }
+  .card-preview.master { background: #ffffff; border-bottom: 1px solid #f0f0f4; }
+  .card-preview.neutral { background: #f3efe6; border-bottom: 1px solid #ebe6da; }
+  .card-preview.respect {
+    background: #ffffff;
+    position: relative;
+  }
+  .card-preview img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .card-preview.respect .respect-wrapper {
+    position: relative;
+    padding: 32px;
+    border: 2px dashed #E61F4D;
+    border-radius: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-preview.respect .respect-wrapper img { max-height: 150px; }
+
+  .card-body {
+    padding: 22px 24px 26px;
+    border-top: 1px solid #eee;
+  }
+  .card-body h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #063064;
+    margin-bottom: 10px;
+  }
+  .card-body p {
+    font-size: 14.5px;
+    color: #4a4a5e;
+    line-height: 1.55;
+  }
+
+  /* Palette */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+  .color-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(6, 48, 100, 0.07);
+  }
+  .color-swatch {
+    height: 130px;
+    display: flex;
+    align-items: flex-end;
+    padding: 14px;
+  }
+  .color-swatch span {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+  .color-info { padding: 16px 18px 20px; }
+  .color-info h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+  }
+  .color-info p {
+    font-size: 13px;
+    color: #6b6b80;
+    line-height: 1.5;
+  }
+
+  /* Esempi applicativi */
+  .examples-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .example-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(6, 48, 100, 0.07);
+  }
+  .example-preview {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  /* Mockup sito */
+  .mockup-site {
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e8e8ee;
+  }
+  .mockup-site .topbar {
+    background: #ffffff;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border-bottom: 1px solid #f0f0f4;
+  }
+  .mockup-site .topbar img { height: 32px; }
+  .mockup-site .topbar .menu {
+    color: #063064;
+    font-size: 10px;
+    font-weight: 600;
+    margin-left: auto;
+    display: flex;
+    gap: 12px;
+  }
+  .mockup-site .hero {
+    flex: 1;
+    background: linear-gradient(135deg, #f0f6fc 0%, #d9e9f7 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #063064;
+  }
+  .mockup-site .hero .title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .mockup-site .hero .sub {
+    font-size: 11px;
+    color: #5a6b80;
+  }
+
+  /* Mockup biglietto da visita */
+  .mockup-card {
+    background: #ffffff;
+    width: 280px;
+    height: 165px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    display: flex;
+    overflow: hidden;
+    border: 1px solid #eee;
+  }
+  .mockup-card .left {
+    background: #ffffff;
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-right: 1px solid #f0f0f4;
+  }
+  .mockup-card .left img { max-width: 100%; max-height: 110px; }
+  .mockup-card .right {
+    flex: 1;
+    padding: 16px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f9fc 100%);
+  }
+  .mockup-card .right .name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #063064;
+    margin-bottom: 3px;
+  }
+  .mockup-card .right .role {
+    font-size: 9.5px;
+    color: #6b6b80;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 10px;
+  }
+  .mockup-card .right .info {
+    font-size: 9px;
+    color: #1a1a2e;
+    line-height: 1.6;
+  }
+
+  /* Mockup social */
+  .mockup-social {
+    background: #ffffff;
+    width: 175px;
+    height: 175px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .mockup-social .head {
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #eee;
+  }
+  .mockup-social .head .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #ebebef;
+  }
+  .mockup-social .head .avatar img { width: 28px; height: 28px; object-fit: contain; }
+  .mockup-social .head .name {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+  .mockup-social .body {
+    flex: 1;
+    background: linear-gradient(135deg, #f5f9fc 0%, #d9e9f7 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .mockup-social .body img { max-height: 90px; }
+
+  /* Mockup divisa/insegna */
+  .mockup-sign {
+    background: linear-gradient(135deg, #f8f8fa 0%, #ebeef2 100%);
+    width: 280px;
+    height: 165px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    box-shadow: 0 6px 22px rgba(6, 48, 100, 0.15);
+    position: relative;
+    border: 1px solid #e0e4eb;
+  }
+  .mockup-sign img { max-height: 130px; }
+  .mockup-sign::after {
+    content: "INSEGNA / TOTEM";
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #6b6b80;
+    letter-spacing: 1.5px;
+  }
+
+  /* Errori */
+  .errors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+  .error-card {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(6, 48, 100, 0.07);
+    border: 2px solid #ffe5e5;
+  }
+  .error-preview {
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .error-preview img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .error-preview .x-overlay {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 26px;
+    height: 26px;
+    background: #E61F4D;
+    border-radius: 50%;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+  }
+  .error-info {
+    padding: 14px 16px 16px;
+    border-top: 1px solid #ffe5e5;
+  }
+  .error-info h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #c41538;
+    margin-bottom: 5px;
+  }
+  .error-info p {
+    font-size: 12.5px;
+    color: #5a5a70;
+    line-height: 1.5;
+  }
+  .error-preview.bg-dark { background: #0a0a14; }
+  .error-preview.bg-clash { background: #ff7700; }
+  .error-preview.bg-stretch { background: #ffffff; }
+  .error-preview.bg-stretch img { transform: scaleX(1.7); }
+  .error-preview.bg-rotate { background: #ffffff; }
+  .error-preview.bg-rotate img { transform: rotate(20deg); }
+
+  /* Footer */
+  .footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 2px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #6b6b80;
+    font-size: 13px;
+  }
+  .footer .author b { color: #1a1a2e; }
+  .footer .pages-brand {
+    font-weight: 700;
+    color: #1a1a2e;
+  }
+  .footer .pages-brand span { color: #E61F4D; }
+
+  @media (max-width: 900px) {
+    .cards-grid, .palette-grid, .examples-grid, .errors-grid {
+      grid-template-columns: 1fr;
+    }
+    .header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .header .subtitle { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Regole Utilizzo <span>Logo</span></h1>
+    <div class="subtitle">
+      <b>BPOWER S.R.L.S.</b><br>
+      Strategia Sito Web — Linee Guida Visive
+    </div>
+  </div>
+
+  <!-- VERSIONI -->
+  <div class="section-title">Versioni del logo</div>
+  <p class="section-subtitle">
+    Il logo <b>BPOWER Car Wash</b> è progettato con palette <b>blu/azzurro</b> e wordmark in blu navy: garantisce massima leggibilità su <b>sfondi chiari</b>. Tre versioni codificate per coprire tutti i casi d'uso.
+  </p>
+
+  <div class="cards-grid">
+
+    <div class="card">
+      <div class="card-preview master">
+        <img src="logo.png" alt="Logo BPower master">
+      </div>
+      <div class="card-body">
+        <h3>1. Versione Master</h3>
+        <p>Versione <b>ufficiale e principale</b>, da utilizzare su <b>sfondi bianchi o molto chiari</b>. È la forma in cui il logo esprime massima leggibilità: il wordmark blu navy si stacca nettamente, e tutti i dettagli glossy del marchio (effetti acqua, bolle, automobile) restano perfettamente visibili. Da usare come prima scelta su header del sito, hero homepage, documenti commerciali, fatture e materiale istituzionale.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview neutral">
+        <img src="logo.png" alt="Logo BPower su fondo neutro">
+      </div>
+      <div class="card-body">
+        <h3>2. Versione su Fondo Neutro</h3>
+        <p>Lo stesso logo applicato su <b>fondi tenui non bianchi</b> (avorio, grigio chiaro, azzurrino pallido). Mantiene piena leggibilità. Da utilizzare per sezioni interne del sito che richiedono una variazione cromatica rispetto al bianco puro, biglietti da visita, brochure, pagine prodotto del catalogo B2B.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview respect">
+        <div class="respect-wrapper">
+          <img src="logo.png" alt="Logo BPower con area di rispetto">
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>3. Area di Rispetto</h3>
+        <p>Mantenere sempre <b>aria attorno al logo</b>. Regola pratica: lasciare uno spazio libero pari almeno alla <b>metà dell'altezza della "B"</b> centrale su tutti i lati. Non inserire testi, icone, decori o bordi all'interno di questa zona.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PALETTE -->
+  <div class="section-title">Palette colori del brand</div>
+  <p class="section-subtitle">
+    Quattro colori dominanti estratti direttamente dal logo. Questa palette guiderà <b>tutte le scelte cromatiche del sito</b>, dei materiali commerciali e dei contenuti social.
+  </p>
+
+  <div class="palette-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background:#063064;">
+        <span>#063064</span>
+      </div>
+      <div class="color-info">
+        <h4>Blu Navy Profondo</h4>
+        <p>Colore principale del marchio. Usato per <b>testi del sito</b>, intestazioni di sezione, footer, pulsanti primari.</p>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#0C518C;">
+        <span>#0C518C</span>
+      </div>
+      <div class="color-info">
+        <h4>Blu Medio</h4>
+        <p>Colore di <b>raccordo</b>. Da usare per pulsanti secondari, hover states, bordi di card e sfumature.</p>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#0F84BF;">
+        <span>#0F84BF</span>
+      </div>
+      <div class="color-info">
+        <h4>Azzurro Brillante</h4>
+        <p>Colore di <b>accento e CTA</b>. Pulsanti "Richiedi preventivo", "Prenota lavaggio", evidenziazioni grafiche.</p>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#51BDE4;">
+        <span>#51BDE4</span>
+      </div>
+      <div class="color-info">
+        <h4>Celeste Acqua</h4>
+        <p>Colore di <b>highlight</b>. Riservato a dettagli leggeri: micro-icone, link in hover, illustrazioni acqua.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESEMPI APPLICATIVI -->
+  <div class="section-title">Esempi applicativi</div>
+  <p class="section-subtitle">
+    Quattro casi d'uso reali in cui il logo BPower trova posto: sito web, biglietto da visita commerciale, post social e insegna fisica delle sedi.
+  </p>
+
+  <div class="examples-grid">
+
+    <div class="example-card">
+      <div class="example-preview" style="background:#f0f2f7;">
+        <div class="mockup-site">
+          <div class="topbar">
+            <img src="logo.png" alt="logo">
+            <div class="menu"><span>HOME</span><span>IMPIANTI</span><span>BIESSE</span><span>CONTATTI</span></div>
+          </div>
+          <div class="hero">
+            <div class="title">Vendita impianti autolavaggio</div>
+            <div class="sub">Aquarama · MA-FRA · Calabria</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>Sito web — Header e Hero</h3>
+        <p>Il logo va in <b>alto a sinistra</b> con altezza minima <b>50-60 px</b>, su sfondo bianco del menu. L'hero in tonalità azzurrine rinforza la palette del brand senza compromettere la leggibilità del logo.</p>
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-preview" style="background:#f0f2f7;">
+        <div class="mockup-card">
+          <div class="left"><img src="logo.png" alt="logo"></div>
+          <div class="right">
+            <div class="name">Mario Rossi</div>
+            <div class="role">Responsabile commerciale</div>
+            <div class="info">+39 0968 1903105<br>info@bpowersrl.it<br>www.bpowersrl.it</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>Biglietto da visita</h3>
+        <p>Logo in versione master su <b>banda bianca</b> a sinistra. Layout pulito con info di contatto in blu navy su sfondo bianco/azzurrino tenue.</p>
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-preview" style="background:#f0f2f7;">
+        <div class="mockup-social">
+          <div class="head">
+            <div class="avatar"><img src="logo.png" alt="logo"></div>
+            <div class="name">BPOWER Car Wash</div>
+          </div>
+          <div class="body"><img src="logo.png" alt="logo grande"></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>Post social — Format quadrato</h3>
+        <p>Avatar profilo in versione master su sfondo bianco, post 1080×1080 con logo centrato su gradient azzurro chiaro. Massima leggibilità su Facebook, Instagram, LinkedIn.</p>
+      </div>
+    </div>
+
+    <div class="example-card">
+      <div class="example-preview" style="background:#f0f2f7;">
+        <div class="mockup-sign"><img src="logo.png" alt="logo insegna"></div>
+      </div>
+      <div class="card-body">
+        <h3>Insegna sedi e totem</h3>
+        <p>Per insegne fisiche degli autolavaggi e materiale outdoor: logo master su <b>fondo bianco o grigio chiaro</b>, eventualmente con illuminazione retro per visibilità notturna. Evitare fondali scuri.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ERRORI -->
+  <div class="section-title">Errori da evitare</div>
+  <p class="section-subtitle">
+    Quattro applicazioni <b>scorrette</b> da non utilizzare mai. Ognuna compromette leggibilità, riconoscibilità o coerenza visiva del marchio.
+  </p>
+
+  <div class="errors-grid">
+
+    <div class="error-card">
+      <div class="error-preview bg-dark">
+        <div class="x-overlay">✕</div>
+        <img src="logo.png" alt="logo errore">
+      </div>
+      <div class="error-info">
+        <h4>Sfondi scuri o neri</h4>
+        <p>Mai utilizzare il logo su nero o blu profondo: il wordmark <b>BPOWER perde leggibilità</b> fondendosi con lo sfondo.</p>
+      </div>
+    </div>
+
+    <div class="error-card">
+      <div class="error-preview bg-clash">
+        <div class="x-overlay">✕</div>
+        <img src="logo.png" alt="logo errore">
+      </div>
+      <div class="error-info">
+        <h4>Sfondi cromatici contrastanti</h4>
+        <p>Mai utilizzare il logo su colori che <b>entrano in conflitto</b> con la palette blu (arancione, rosso, verde acceso).</p>
+      </div>
+    </div>
+
+    <div class="error-card">
+      <div class="error-preview bg-stretch">
+        <div class="x-overlay">✕</div>
+        <img src="logo.png" alt="logo errore">
+      </div>
+      <div class="error-info">
+        <h4>Distorsioni e scaling non proporzionali</h4>
+        <p>Mai stirare, schiacciare o deformare il logo. Mantenere sempre <b>proporzioni 1:1</b>.</p>
+      </div>
+    </div>
+
+    <div class="error-card">
+      <div class="error-preview bg-rotate">
+        <div class="x-overlay">✕</div>
+        <img src="logo.png" alt="logo errore">
+      </div>
+      <div class="error-info">
+        <h4>Rotazioni o inclinazioni</h4>
+        <p>Il logo va sempre presentato in <b>posizione orizzontale</b>. Nessuna rotazione, inclinazione o effetto prospettico.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="author">A cura di: <b>Salvo Bilotti</b> — Strategist</div>
+    <div class="pages-brand">pagine<span>sì!</span></div>
+  </div>
+
+</div>
+</body>
+</html>
